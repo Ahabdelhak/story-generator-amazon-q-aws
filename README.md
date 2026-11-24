@@ -2,7 +2,6 @@
 
 A children's educational publisher wants short stories personalised from a character, a theme and a setting, without writing each one by hand. This repo is a small serverless backend for that: one Lambda asks Amazon Bedrock (Nova Pro) for the story, saves the text to S3 and records metadata in DynamoDB.
 
-It started as the AWS Cloud Quest lab "Build and Understand Code with Amazon Q", where the first draft was written with Amazon Q Developer inline suggestions. The lab version worked but had real flaws; this repo keeps the architecture and fixes them. See [docs/decisions.md](docs/decisions.md).
 
 ![architecture](docs/architecture.png)
 
@@ -29,7 +28,7 @@ It started as the AWS Cloud Quest lab "Build and Understand Code with Amazon Q",
 | ![code](docs/screenshots/01-lambda-code-amazon-q-suggestions.png) | Amazon Q-generated client, env vars and model id in the Lambda editor |
 | ![test](docs/screenshots/02-lambda-test-succeeded-story-in-s3.png) | Test succeeded, story saved to S3 |
 | ![ddb](docs/screenshots/03-dynamodb-item-written.png) | DynamoDB item written (note title "No Title", the flaw above) |
-| ![diy](docs/screenshots/04-diy-validated.png) | Lab validation passed |
+
 
 Account identifiers are masked in the screenshots.
 
