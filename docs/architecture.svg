@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker></defs>
+<rect width="960" height="400" fill="#ffffff"/>
+<text x="30" y="36" font-size="20" font-weight="700" fill="#0f172a">Personalised story generator on AWS</text>
+<text x="30" y="58" font-size="12" fill="#64748b">One Lambda: prompt Bedrock Nova Pro, save the text to S3, record metadata in DynamoDB.</text>
+<g font-size="13" text-anchor="middle">
+<rect x="30" y="150" width="140" height="70" rx="10" fill="#f1f5f9" stroke="#94a3b8"/><text x="100" y="180" font-weight="700" fill="#0f172a">Caller</text><text x="100" y="200" fill="#475569">character, theme, setting</text>
+<rect x="240" y="150" width="190" height="70" rx="10" fill="#fff7ed" stroke="#fb923c"/><text x="335" y="180" font-weight="700" fill="#9a3412">Lambda story-teller</text><text x="335" y="200" fill="#9a3412">Python 3.13, validates input</text>
+<rect x="520" y="80" width="200" height="64" rx="10" fill="#f0fdf4" stroke="#4ade80"/><text x="620" y="108" font-weight="700" fill="#166534">Bedrock Nova Pro</text><text x="620" y="128" fill="#166534">returns {title, story} JSON</text>
+<rect x="520" y="168" width="200" height="64" rx="10" fill="#ecfeff" stroke="#22d3ee"/><text x="620" y="196" font-weight="700" fill="#155e75">S3 bucket</text><text x="620" y="216" fill="#155e75">uid.txt (story text)</text>
+<rect x="520" y="256" width="200" height="64" rx="10" fill="#faf5ff" stroke="#c084fc"/><text x="620" y="284" font-weight="700" fill="#6b21a8">DynamoDB table</text><text x="620" y="304" fill="#6b21a8">uid, title, s3_key, theme...</text>
+<rect x="780" y="168" width="150" height="64" rx="10" fill="#fefce8" stroke="#facc15"/><text x="855" y="196" font-weight="700" fill="#854d0e">Amazon Q Developer</text><text x="855" y="216" fill="#854d0e">wrote the first draft</text>
+</g>
+<g stroke="#475569" stroke-width="1.6" fill="none" marker-end="url(#a)">
+<path d="M170 185H240"/><path d="M430 185H470V112H520"/><path d="M430 185H520"/><path d="M430 185H470V288H520"/>
+</g>
+<path d="M780 200H740" stroke="#facc15" stroke-width="1.6" stroke-dasharray="4 3" fill="none"/>
+<text x="30" y="372" font-size="12" fill="#64748b">Order: generate, parse JSON, write S3, write DynamoDB. Parse failure stops before anything is stored.</text>
+</svg>
